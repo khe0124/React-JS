@@ -7,14 +7,14 @@
 
 ## 01. React 살펴보기
 - React는 선언적이며, 뷰 또는 UI레이어의 역할만 한다.
-- React는 ReactDOM.render()메서드를 통해 컴포넌트를 실제로 사용한다.
-- React컴포넌트는 클래스로 생성하고 필수적인 render() 메서드를 포함한다.
-- React컴포넌트는 재사용할 수 있고, 불가변 속성을 전달받아서 this.props.NAME으로 접근 할 수 있다.
+- React는 `ReactDOM.render()`메서드를 통해 컴포넌트를 실제로 사용한다.
+- React컴포넌트는 클래스로 생성하고 필수적인 `render()` 메서드를 포함한다.
+- React컴포넌트는 재사용할 수 있고, 불가변 속성을 전달받아서 `this.props.NAME`으로 접근 할 수 있다.
 
 <br>
 
 ## 02. React 첫걸음
-- React 엘리먼트를 중첩하여 자식 엘리먼트로 추가하려면 createElement()의 세번째 인자로 계속해서 전달하면 된다.
+- React 엘리먼트를 중첩하여 자식 엘리먼트로 추가하려면 `createElement()`의 세번째 인자로 계속해서 전달하면 된다.
 - React 엘리먼트를 생성할 때 사용자 정의 컴포넌트 클래스를 사용한다.
 - 속성을 사용하여 React엘리먼트의 렌더링 결과를 바꾼다.
 - 부모컴포넌트는 자식 엘리먼트에 속성을 전달할 수도 있다.
@@ -35,19 +35,19 @@
 
 ## 04. React 컴포넌트의 상태객체
 - 상태 객체는 변경할 수 있다. 속성은 변경할 수 없다.
-- 컴포넌트 클래스의 생성자에서 this.state = ... 를 사용하거나, createClass()를 사용하는 경우 getInitialState를 호출하여 컴포넌트 초기 상태 객체를 설정할 수 있다.
-- this.setState는 상태 객체 전체가 아니라 전달한 항목만 갱신한다.
+- 컴포넌트 클래스의 생성자에서 `this.state = ... `를 사용하거나, `createClass()`를 사용하는 경우 `getInitialState`를 호출하여 컴포넌트 초기 상태 객체를 설정할 수 있다.
+- `this.setState`는 상태 객체 전체가 아니라 전달한 항목만 갱신한다.
 - {}는 JSX코드에서 변수를 출력하고 자바스크립트를 실행할 때 사용한다.
-- 상태객체는 this.state.NAME으로 접근한다.
+- 상태객체는 `this.state.NAME`으로 접근한다.
 - 상태비저장 컴포넌트는 React를 다룰 때 선호되는 방식이다.
 
 <br>
 
 ## 05. React 컴포넌트 라이프사이클 이벤트
-- componentWillMount()는 서버와 클라이언트에서 모두 실행되는 반면에, componentDidMount()는 클라이언트에서만 실행된다.
+- `componentWillMount()`는 서버와 클라이언트에서 모두 실행되는 반면에, `componentDidMount()`는 클라이언트에서만 실행된다.
 - 마운팅 이벤트는 일반적으로 React를 다른 라이브러리와 통합하거나 저장소 또는 서버에서 데이터를 가져올 때 사용된다.
-- shouldComponentUpdate()를 사용해서 렌더링을 최적화할 수 있다.
-- componentWillReceiveProps()를 사용하면 새로운 속성이 전달될 때 상태를 변경할 수 있다.
+- `shouldComponentUpdate()`를 사용해서 렌더링을 최적화할 수 있다.
+- `componentWillReceiveProps()`를 사용하면 새로운 속성이 전달될 때 상태를 변경할 수 있다.
 - 언마운팅 이벤트는 일반적으로 정리에 사용된다.
 - 갱신 이벤트는 새로운 속성이나 상태를 의존하는 로직을 작성할 때 사용되고, 뷰를 갱신하는 시점을 세밀하게 조절할 수 있다.
 
@@ -55,11 +55,11 @@
 
 ## 06. React에서 이벤트 다루기
 - onClick은 마우스와 트랙패드의 클릭을 캡쳐한다.
-- JSX문법으로 이벤트 리스너를 추가할 때는 <a onName ={this.METHOD}>로 작성한다.
-- constructor() 또는 JSX를 이용해 bind()로 이벤트 핸들러에 this를 바인딩해서 컴포넌트 클래스의 인스턴스에 접근할 수 있다.
-- componentDidMount()는 브라우저에서만 실행된다. componentWillMount()는 브라우저와 서버 측 렌더링에서 모두 실행된다.
+- JSX문법으로 이벤트 리스너를 추가할 때는 `<a onName ={this.METHOD}>`로 작성한다.
+- `constructor()` 또는 JSX를 이용해 bind()로 이벤트 핸들러에 this를 바인딩해서 컴포넌트 클래스의 인스턴스에 접근할 수 있다.
+- `componentDidMount()`는 브라우저에서만 실행된다. `componentWillMount()`는 브라우저와 서버 측 렌더링에서 모두 실행된다.
 - React는 합성 이벤트 객체를 제공함으로써 거의 대부분의 표준 HTML DOM이벤트를 지원한다.
-- React를 다른 프레임워크와 통합하거나 React가 지원하지 않는 이벤트를 처리하기 위해 componentDidMount()와 componentWillUnmount()를 사용할 수 잇다.
+- React를 다른 프레임워크와 통합하거나 React가 지원하지 않는 이벤트를 처리하기 위해 `componentDidMount()`와 `componentWillUnmount()`를 사용할 수 잇다.
 
 <br>
 
@@ -77,7 +77,7 @@
 ## 08. 확장성을 고려한 React 컴포넌트
 - 컴포넌트의 defaultProps속성을 이용해서 모든 컴포넌트 속성의 기본값을 정의할 수 있다.
 - 난독화를 거치지 않는 개발 버전의 React라이브러리를 사용할 때는 컴포넌트 속성 값의 유효성 검사를 강제할 수 있다.
-- 속성의 타입을 지정하고, isRequired를 추가하여 필수 속성으로 정할 수 있다. 필요하다면 속성 유효성 검사를 직접 정의할 수 있다.
+- 속성의 타입을 지정하고, `isRequired`를 추가하여 필수 속성으로 정할 수 있다. 필요하다면 속성 유효성 검사를 직접 정의할 수 있다.
 - 속성값이 유효성 검사를 통과하지 못하면 브라우저의 콘솔에 경고 메시지를 출력한다.
 - 난독화를 거친 프로덕션 버전의 React라이브러리는 유효성 검사를 포함하지 않는다.
 - React에서 고차 컴포넌트를 생성하여 공통속성, 메서드, 이벤트를 캡슐화할 수 있다.
